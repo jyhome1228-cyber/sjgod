@@ -1,4 +1,4 @@
-/* 사자가온다 제공 이미지 원본 URL 목록 · 2026-11-12 */
+/* Public-facing assets only. 인증·특허 자료는 보안상 공개 제외. */
 window.SJGOD_ASSETS = [
   {
     "id": 1,
@@ -304,56 +304,6 @@ window.SJGOD_ASSETS = [
     "id": 61,
     "group": "growth",
     "url": "https://nineworksdatabase.planus253.workers.dev/cdn/uncategorized/20261112-084742-61-7c141fee.webp"
-  },
-  {
-    "id": 62,
-    "group": "proof",
-    "url": "https://nineworksdatabase.planus253.workers.dev/cdn/uncategorized/20261112-084743-62-c50bafcd.webp"
-  },
-  {
-    "id": 63,
-    "group": "proof",
-    "url": "https://nineworksdatabase.planus253.workers.dev/cdn/uncategorized/20261112-084744-63-d6460fcb.webp"
-  },
-  {
-    "id": 64,
-    "group": "proof",
-    "url": "https://nineworksdatabase.planus253.workers.dev/cdn/uncategorized/20261112-084744-64-a981d4d5.webp"
-  },
-  {
-    "id": 65,
-    "group": "proof",
-    "url": "https://nineworksdatabase.planus253.workers.dev/cdn/uncategorized/20261112-084745-65-073456d5.webp"
-  },
-  {
-    "id": 66,
-    "group": "proof",
-    "url": "https://nineworksdatabase.planus253.workers.dev/cdn/uncategorized/20261112-084745-66-d9032cbf.webp"
-  },
-  {
-    "id": 67,
-    "group": "proof",
-    "url": "https://nineworksdatabase.planus253.workers.dev/cdn/uncategorized/20261112-084746-67-145a9bee.webp"
-  },
-  {
-    "id": 68,
-    "group": "proof",
-    "url": "https://nineworksdatabase.planus253.workers.dev/cdn/uncategorized/20261112-084747-68-08e09978.webp"
-  },
-  {
-    "id": 69,
-    "group": "proof",
-    "url": "https://nineworksdatabase.planus253.workers.dev/cdn/uncategorized/20261112-084748-69-7124f232.webp"
-  },
-  {
-    "id": 70,
-    "group": "proof",
-    "url": "https://nineworksdatabase.planus253.workers.dev/cdn/uncategorized/20261112-084748-70-c9998f83.webp"
-  },
-  {
-    "id": 71,
-    "group": "proof",
-    "url": "https://nineworksdatabase.planus253.workers.dev/cdn/uncategorized/20261112-084749-71-e62188b3.webp"
   },
   {
     "id": 72,
