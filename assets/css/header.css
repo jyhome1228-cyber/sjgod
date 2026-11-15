@@ -1,0 +1,25 @@
+/* Shared site navigation — same size and alignment on every page */
+.site-header{height:74px!important;background:#000!important;color:#fff!important}
+.site-header .header-inner{height:74px!important;max-width:1440px!important;width:calc(100% - 100px)!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:28px!important;margin:0 auto!important}
+.site-header .brand-lockup{width:185px!important;height:43px!important;flex:none!important}
+.site-header .brand-lockup-image{width:100%!important;height:100%!important;object-fit:contain!important;object-position:left center!important}
+.site-header .desktop-nav{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:clamp(16px,1.6vw,26px)!important;margin-left:auto!important}
+.site-header .desktop-nav>a:not(.nav-cta){font-size:14px!important;font-weight:550!important;letter-spacing:-.025em!important;white-space:nowrap!important;line-height:1.35!important}
+.site-header .desktop-nav .nav-cta{font-size:13px!important;font-weight:650!important;padding:11px 20px!important;border-radius:999px!important;background:#fff!important;color:#000!important;border:1px solid #fff!important;white-space:nowrap!important}
+.site-header .mobile-nav{background:#000!important;color:#fff!important;border-color:#292929!important}
+.site-header .menu-toggle{display:none!important}
+@media(max-width:1130px){
+  .site-header .header-inner{gap:18px!important}
+  .site-header .brand-lockup{width:165px!important}
+  .site-header .desktop-nav{gap:13px!important}
+  .site-header .desktop-nav>a:not(.nav-cta){font-size:12px!important}
+}
+@media(max-width:800px){
+  .site-header,.site-header .header-inner{height:66px!important}
+  .site-header .header-inner{width:calc(100% - 40px)!important}
+  .site-header .brand-lockup{width:155px!important;height:39px!important}
+  .site-header .desktop-nav{display:none!important}
+  .site-header .menu-toggle{display:block!important}
+  .site-header .mobile-nav{width:100%;padding:18px 20px!important}
+  .site-header .mobile-nav a{font-size:16px!important;padding:12px 0!important}
+}
