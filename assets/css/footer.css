@@ -1,0 +1,41 @@
+/* Shared footer: restrained black-and-white editorial system */
+.site-footer-refined{background:#000!important;color:#fff!important;border-top:1px solid #333;padding:0!important}
+.site-footer-refined .footer-content,.site-footer-refined .footer-bottom{max-width:1440px!important;width:calc(100% - 100px)!important;margin:0 auto!important}
+.site-footer-refined .footer-content{display:grid!important;grid-template-columns:minmax(0,1.2fr) minmax(260px,.85fr) minmax(280px,.85fr);align-items:start!important;gap:clamp(35px,5vw,95px);padding:66px 0 58px!important}
+.site-footer-refined .footer-identity .brand-lockup{display:inline-flex;width:194px;height:45px;margin:0 0 25px}
+.site-footer-refined .footer-identity p{font-size:15px!important;line-height:1.8!important;color:#aaa!important;max-width:390px;margin:0;letter-spacing:-.025em;word-break:keep-all}
+.site-footer-refined .footer-navigation{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 30px;padding:9px 0 0;margin:0}
+.site-footer-refined .footer-navigation a{font-size:14px!important;font-weight:520;color:#d6d6d6!important;line-height:1.4;text-decoration:none;white-space:nowrap}
+.site-footer-refined .footer-navigation a:hover,.site-footer-refined .footer-navigation a:focus-visible{color:#fff!important;text-decoration:underline;text-underline-offset:6px}
+.site-footer-refined .footer-contact{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:7px 0 0}
+.site-footer-refined .footer-contact-title{font-size:14px!important;font-weight:650;color:#fff!important;margin:0 0 6px;line-height:1.5}
+.site-footer-refined .footer-contact-email{font-size:20px!important;font-weight:650;color:#fff!important;line-height:1.35;letter-spacing:-.025em;text-decoration:none;overflow-wrap:anywhere}
+.site-footer-refined .footer-contact-phone{font-size:14px!important;color:#bbb!important;text-decoration:none}
+.site-footer-refined .footer-inquiry{display:inline-block;margin-top:9px;padding:11px 19px;border:1px solid #777;border-radius:5px;font-size:13px!important;color:#fff!important;text-decoration:none}
+.site-footer-refined .footer-inquiry:hover{border-color:#fff;background:#111}
+.site-footer-refined .footer-bottom{border-top:1px solid #333;display:flex;justify-content:space-between;align-items:end;gap:35px;padding:25px 0 32px!important}
+.site-footer-refined .footer-company-details p{display:flex;flex-wrap:wrap;gap:8px 23px;margin:0 0 8px!important;color:#999!important;font-size:12px!important;line-height:1.75}
+.site-footer-refined .footer-company-details p:last-child{margin-bottom:0!important}
+.site-footer-refined .footer-company-details strong{color:#ccc;font-weight:580}
+.site-footer-refined .footer-bottom small{flex-shrink:0;color:#777!important;font-size:12px;line-height:1.6;white-space:nowrap}
+@media(max-width:960px){
+ .site-footer-refined .footer-content{grid-template-columns:1fr 1fr;gap:32px 45px;padding:52px 0 45px!important}
+ .site-footer-refined .footer-identity{grid-column:1/-1}
+ .site-footer-refined .footer-bottom{align-items:start;flex-direction:column;gap:12px}
+}
+@media(max-width:800px){
+ .site-footer-refined .footer-content,.site-footer-refined .footer-bottom{width:calc(100% - 40px)!important}
+}
+@media(max-width:580px){
+ .site-footer-refined .footer-content{grid-template-columns:1fr;gap:33px;padding:47px 0 37px!important}
+ .site-footer-refined .footer-identity{grid-column:auto}
+ .site-footer-refined .footer-identity .brand-lockup{width:178px;height:42px;margin-bottom:16px}
+ .site-footer-refined .footer-identity p{font-size:14px!important}
+ .site-footer-refined .footer-navigation{grid-template-columns:repeat(3,minmax(0,1fr));gap:17px 10px;padding:0}
+ .site-footer-refined .footer-navigation a{font-size:13px!important}
+ .site-footer-refined .footer-contact{padding:0;gap:11px}
+ .site-footer-refined .footer-contact-email{font-size:19px!important}
+ .site-footer-refined .footer-bottom{padding:22px 0 30px!important}
+ .site-footer-refined .footer-company-details p{gap:5px 14px}
+ .site-footer-refined .footer-bottom small{white-space:normal}
+}
