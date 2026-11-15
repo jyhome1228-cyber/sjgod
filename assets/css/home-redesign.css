@@ -106,3 +106,71 @@
  .renewal-home .r-cta a{display:inline-block;margin-top:25px}
 }
 @media(prefers-reduced-motion:reduce){.renewal-home *, .renewal-home *::before,.renewal-home *::after{transition:none!important}}
+
+
+/* Restored original lion art direction: primary illustration instead of generic card hero */
+.renewal-home .r-illustrated-hero{
+  position:relative;isolation:isolate;display:flex;align-items:center;
+  min-height:690px;overflow:hidden;padding:140px 0 100px;
+  background:#000!important;border-bottom:1px solid #252525
+}
+.renewal-home .r-hero-art{
+  position:absolute;z-index:-2;inset:0;width:100%;height:100%;
+  object-fit:contain;object-position:center center;display:block;
+}
+.renewal-home .r-illustrated-hero::before{
+  content:"";position:absolute;z-index:-1;inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.48) 49%,rgba(0,0,0,.17) 100%);
+}
+.renewal-home .r-hero-foreground{width:100%;max-width:1440px}
+.renewal-home .r-illustrated-hero .r-hero-main{max-width:900px}
+.renewal-home .r-illustrated-hero .r-hero-main h1{
+  font-size:clamp(31px,3vw,44px);font-weight:710;line-height:1.33;letter-spacing:-.052em;
+  text-wrap:balance;color:#fff!important
+}
+.renewal-home .r-illustrated-hero .r-hero-main p{
+  font-size:16px;line-height:1.75;color:#eee;margin:22px 0 28px
+}
+.renewal-home .r-hero-link{
+  display:inline-flex;min-height:0;border:0;border-bottom:1px solid #fff;
+  padding:0 0 9px;background:transparent!important;color:#fff!important;border-radius:0;
+  font-size:14px;font-weight:650
+}
+.renewal-home .r-brand-lion{background:#000!important;border-bottom:1px solid #262626;padding:75px 0}
+.renewal-home .r-brand-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:65px}
+.renewal-home .r-brand-copy h2{font-size:clamp(24px,2.1vw,31px);line-height:1.43;font-weight:690;color:#fff!important}
+.renewal-home .r-brand-copy p{margin:18px 0 23px;font-size:15px;line-height:1.7;color:#bcbcbc}
+.renewal-home .r-brand-copy a{font-size:14px;color:#fff;border-bottom:1px solid #aaa;padding-bottom:6px}
+.renewal-home .r-brand-grid>img{width:100%;height:auto;max-height:390px;object-fit:contain;display:block}
+.renewal-home .r-audience{padding:73px 0;background:#000!important;border-bottom:1px solid #292929}
+.renewal-home .r-audience-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.renewal-home .r-audience-grid>a{
+  display:flex;flex-direction:column;justify-content:space-between;gap:12px;
+  padding:24px 21px;min-height:135px;border:1px solid #363636;
+  background:#0d0d0d;color:#fff;border-radius:8px
+}
+.renewal-home .r-audience-grid strong{font-size:18px;font-weight:690}
+.renewal-home .r-audience-grid span{font-size:13px;color:#aaa;line-height:1.5}
+.renewal-home .r-audience-grid>a:hover{background:#171717;border-color:#777}
+@media(max-width:1000px){
+ .renewal-home .r-audience-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .renewal-home .r-illustrated-hero{min-height:640px}
+}
+@media(max-width:800px){
+ .renewal-home .r-illustrated-hero{min-height:600px;padding:115px 0 70px}
+ .renewal-home .r-hero-art{object-fit:cover;object-position:center}
+ .renewal-home .r-illustrated-hero::before{background:rgba(0,0,0,.62)}
+ .renewal-home .r-brand-grid{grid-template-columns:1fr;gap:15px}
+ .renewal-home .r-brand-grid>img{max-height:280px}
+ .renewal-home .r-brand-lion,.renewal-home .r-audience{padding:54px 0}
+ .renewal-home .r-audience-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:540px){
+ .renewal-home .r-illustrated-hero{min-height:630px}
+ .renewal-home .r-illustrated-hero .r-hero-main h1{font-size:29px}
+ .renewal-home .r-illustrated-hero .r-hero-main p{font-size:14px}
+ .renewal-home .r-audience-grid{gap:9px}
+ .renewal-home .r-audience-grid>a{min-height:112px;padding:17px 14px}
+ .renewal-home .r-audience-grid strong{font-size:16px}
+ .renewal-home .r-audience-grid span{font-size:12px}
+}
