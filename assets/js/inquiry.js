@@ -2,6 +2,7 @@
   const heroAsset=(window.SJGOD_ASSETS||[]).find(x=>x.id===1);
   const hero=document.querySelector('[data-home-hero]');
   if(hero && heroAsset) hero.style.backgroundImage='url("'+heroAsset.url+'")';
+  document.querySelectorAll('img[data-asset]').forEach(img => { const a=(window.SJGOD_ASSETS||[]).find(v=>v.id===Number(img.dataset.asset)); if(a) img.src=a.url; });
   const form=document.getElementById('inquiry-form');
   if(!form)return;
   const params=new URLSearchParams(location.search);
