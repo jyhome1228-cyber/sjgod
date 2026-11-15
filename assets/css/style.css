@@ -401,3 +401,47 @@ body{color-scheme:dark}
  .intro-row p{font-size:15px!important;line-height:1.78!important}
  .home-section-heading{gap:16px}
 }
+
+
+/* Rebuilt company history: dense chronological records, no decorative timeline */
+.company-history{background:#000!important;padding-top:72px!important;padding-bottom:72px!important}
+.company-history .container{max-width:1440px}
+.company-history h2{font-size:28px!important;margin-bottom:12px!important}
+.company-history .renew-lead{margin-bottom:35px!important;font-size:15px!important;line-height:1.7!important}
+.company-history .history-detailed{border-top:1px solid #454545!important}
+.company-history .history-item{
+ display:grid!important;
+ grid-template-columns:150px minmax(0,1fr)!important;
+ column-gap:42px!important;
+ align-items:start!important;
+ padding:33px 0!important;
+ border-bottom:1px solid #303030!important;
+ margin:0!important;
+}
+.company-history .history-year{font-size:27px!important;line-height:1.25!important;letter-spacing:-.035em!important;font-weight:690!important;margin:0!important;color:#fff!important}
+.company-history .history-events{margin:0!important;padding:0!important;list-style:none!important;display:grid!important;gap:11px!important}
+.company-history .history-events li{font-size:15px!important;line-height:1.65!important;letter-spacing:-.015em;color:#dedede!important;word-break:keep-all}
+.company-history .history-action{display:flex;gap:28px;margin-top:30px}
+.company-intro-detail{display:grid;grid-template-columns:1fr 1fr;gap:36px;border-top:1px solid #383838;padding-top:25px;margin-top:28px}
+.company-intro-detail strong{display:block;font-size:16px;font-weight:650;color:#fff;margin-bottom:10px}
+.company-intro-detail p{font-size:15px;color:#bababa;line-height:1.75;max-width:490px;word-break:keep-all}
+.home-partners,.home-news{min-height:0!important;height:auto!important;padding:58px 0!important}
+.home-partners .home-section-heading,.home-news .home-section-heading{margin-bottom:25px!important}
+.home-partners .partner-grid.partner-marquee{margin:0!important}
+.home-partners + .home-news{border-top:1px solid #242424}
+.home-years>div{min-height:0!important}
+@media(max-width:800px){
+ .company-history{padding:52px 0!important}
+ .company-history .history-item{grid-template-columns:100px minmax(0,1fr)!important;column-gap:18px!important;padding:25px 0!important}
+ .company-history .history-year{font-size:24px!important}
+ .company-history .history-events{gap:10px!important}
+ .company-history .history-events li{font-size:14px!important}
+ .company-intro-detail{grid-template-columns:1fr;gap:15px}
+ .home-partners,.home-news{padding:47px 0!important}
+}
+@media(max-width:540px){
+ .company-history .history-item{grid-template-columns:1fr!important;gap:13px!important;padding:26px 0!important}
+ .company-history .history-year{font-size:24px!important}
+ .company-history .history-events li{font-size:14px!important;line-height:1.65!important}
+ .company-history .history-action{display:grid;gap:16px}
+}
