@@ -29,6 +29,24 @@
   document.querySelectorAll('[data-gallery]').forEach(container => {
     const group = container.dataset.gallery;
     const items = assets.filter(asset => asset.group === group);
+    if (group === 'partners' && container.closest('.home-partners')) {
+      // Visual-only duplicate for a seamless horizontal marquee; no empty cards.
+      container.classList.add('partner-marquee');
+      container.setAttribute('aria-label', '사자가온다 협력기관 로고');
+      const track = document.createElement('div');
+      track.className = 'partner-marquee-track';
+      const set = document.createElement('div');
+      set.className = 'partner-marquee-set';
+      items.forEach((asset,index) => set.append(makeImage(asset,group,index)));
+      const duplicate = set.cloneNode(true);
+      duplicate.setAttribute('aria-hidden','true');
+      duplicate.querySelectorAll('img').forEach(img => { img.alt=''; img.loading='lazy'; });
+      track.append(set,duplicate);
+      container.replaceChildren(track);
+      // Let keyboard users pause via focus, and avoid motion for reduced-motion users.
+      container.tabIndex=0;
+      return;
+    }
     const frag = document.createDocumentFragment();
     items.forEach((asset,index) => frag.append(makeImage(asset,group,index)));
     container.replaceChildren(frag);
