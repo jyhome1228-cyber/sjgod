@@ -266,3 +266,40 @@ html,body{background:#ffffff;color:#111111}
 @media(max-width:1150px){.site-header .brand-lockup{width:170px;height:43px}.site-header .header-inner{gap:20px}}
 @media(max-width:800px){.site-header .brand-lockup{width:160px;height:40px}.site-header .desktop-nav{display:none}.site-header .menu-toggle{display:block}}
 @media(max-width:560px){.site-header .brand-lockup{width:146px;height:38px}.site-footer .footer-inner .brand-lockup{width:164px;height:42px}}
+
+
+/* ============================================================
+   SJGOD GLOBAL BLACK SYSTEM / 2026-11-15
+   All sections black. White hierarchy, neutral-gray dividers.
+   Content photography/logos retain their original source color.
+   ============================================================ */
+:root{color-scheme:dark;--ink:#ffffff;--paper:#000000;--muted:#aaaaaa;--line:#303030;--accent:#ffffff}
+html,body{background:#000000!important;color:#ffffff!important}
+body{color-scheme:dark}
+.site-header,.site-header.scrolled,.site-header.menu-open,.site-footer,.renew-contact-band,.contact-section{background:#000000!important;color:#ffffff!important}
+.site-header{border-bottom:1px solid #292929!important}
+.site-header a,.site-header button,.site-footer a{color:#ffffff}
+.site-header .mobile-nav{background:#000000!important;border-color:#292929!important}
+.brand-intro,.minimal-company-intro,.minimal-services,.home-showcase,.home-impact,.home-programs,.home-partners,.home-news,.home-history,.home-contact,.renew-section,.renew-section:nth-child(even),.section,.news-section,.solutions-section,.business-section,.products-section,.partners-section,.growth-section,.editorial-intro,.renew-page-hero,.subpage-header,.renew-home-hero,.home-art-hero,.restrained-hero,.gallery-section,.contact-section,.site-footer{background:#000000!important;background-color:#000000!important;color:#ffffff!important}
+.renew-section:not(:last-child),.minimal-company-intro,.editorial-intro,.renew-page-hero{border-bottom:1px solid #252525!important}
+.renew-section h1,.renew-section h2,.renew-section h3,.section h1,.section h2,.section h3,.editorial-intro h1,.renew-page-hero h1,.subpage-header h1,.home-section-heading h2,.home-contact h2,.intro-row h2,.renew-contact-band h2,.program-block h2,.history-item h3,.record-item h3,.news-list h3,.minimal-service-list strong,.home-program-rows strong,.home-years strong,.renew-home-copy h1{color:#ffffff!important}
+.editorial-intro p,.renew-page-hero p,.renew-page-hero p:last-child,.subpage-header p,.subpage-header p:not(.eyebrow),.renew-lead,.renew-section .renew-lead,.home-section-heading p,.intro-row p,.minimal-company-intro p,.minimal-service-list span,.home-program-rows span,.home-years span,.news-list time,.record-meta,.record-item p,.history-item p,.history-preview span,.history-preview p,.renew-card p,.business-card p,.renew-note,.impact-note,.impact-stats p,.footer-tagline,.footer-info p,.footer-info small{color:#a8a8a8!important}
+.renew-section .section-kicker,.section-kicker,.eyebrow,.renew-section .eyebrow{color:#b9b9b9!important}
+.renew-card,.renew-grid .renew-card,.business-card,.history-preview>div,.process,.program-block,.evidence-grid,.impact-stats,.audience-list,.home-program-rows,.minimal-service-list,.partner-grid .media-tile,.media-tile,.inquiry-form,.category-tags span{background:#000000!important;color:#ffffff!important}
+.renew-grid,.renew-grid .renew-card,.program-list,.program-block,.history-list,.history-item,.history-preview>div,.record-list,.record-item,.news-list,.news-list article,.evidence-grid,.evidence-grid>div,.impact-stats,.audience-list,.audience-list .renew-card,.minimal-service-list,.minimal-service-list>a,.home-program-rows,.home-program-rows a,.category-tags span,.partner-grid,.partner-grid .media-tile,.proof-grid .media-tile,.filterbar select,.filterbar input,.inquiry-form input,.inquiry-form select,.inquiry-form textarea{border-color:#303030!important}
+.renew-card h3,.business-card h3,.audience-list .renew-card h3{color:#ffffff!important}
+.renew-card .text-link,.text-link,.mono-text-link,.home-program-rows a,.minimal-service-list>a,.section-actions .text-link,.home-history .mono-text-link,.home-showcase .mono-text-link{color:#ffffff!important}
+.renew-card .text-link:hover,.text-link:hover,.mono-text-link:hover{color:#d0d0d0!important}
+.home-program-rows a:hover,.minimal-service-list>a:hover,.audience-list .renew-card:hover{background:#111111!important}
+.renew-section .partner-grid,.home-partners .partner-grid,.partner-grid,.partner-grid .media-tile{background:#000000!important}
+.partner-grid img,.gallery-grid img,.growth-grid img,.home-product-teasers img{filter:none}
+.renew-section .media-tile:not(.media-partners),.gallery-grid .media-tile,.growth-grid .media-tile{background:#101010!important}
+.inquiry-form input:not([type=checkbox]),.inquiry-form select,.inquiry-form textarea,.filterbar select,.filterbar input{background:#090909!important;color:#ffffff!important;border:1px solid #414141!important}
+.inquiry-form input::placeholder,.inquiry-form textarea::placeholder,.filterbar input::placeholder{color:#858585!important}
+.inquiry-form input:focus,.inquiry-form textarea:focus,.filterbar input:focus,.filterbar select:focus{outline:2px solid #ffffff;outline-offset:2px}
+.inquiry-form label,.form-check,.filterbar label{color:#e8e8e8}
+.round-button,.program-block .round-button,.section-actions .round-button,.inquiry-submit,.site-header .nav-cta{background:#ffffff!important;color:#000000!important;border:1px solid #ffffff!important}
+.round-button:hover,.program-block .round-button:hover,.section-actions .round-button:hover,.inquiry-submit:hover,.site-header .nav-cta:hover{background:#d4d4d4!important;color:#000000!important;border-color:#d4d4d4!important}
+.restrained-hero-symbol,.site-header .brand-lockup-image,.site-footer .brand-lockup-image{filter:invert(1)}
+.home-years>div{border-color:#333333}
+::selection{background:#ffffff;color:#000000}
