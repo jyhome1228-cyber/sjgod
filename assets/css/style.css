@@ -373,3 +373,31 @@ body{color-scheme:dark}
  .home-partners .partner-marquee-track{animation:none!important}
  .home-partners .partner-marquee-set[aria-hidden="true"]{display:none}
 }
+
+
+/* 2026-11-15 / Editorial language and readability standard
+   No decorative diagonal arrows, no trailing dots in display headings.
+   Make lines shorter and increase body readability, without giant headlines. */
+.intro-row{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(35px,5vw,90px);align-items:start}
+.intro-row>div{max-width:660px}
+.intro-row p{font-size:16px!important;line-height:1.8!important;letter-spacing:-.022em;word-break:keep-all;overflow-wrap:break-word;max-width:620px!important}
+.intro-row h2{font-size:clamp(25px,2vw,30px)}
+.minimal-company-intro{padding:72px 0}
+.home-section-heading p,.renew-lead,.editorial-intro p:last-child,.renew-page-hero p:last-child{font-size:15px!important;line-height:1.75!important;word-break:keep-all;max-width:660px}
+.home-section-heading h2{font-size:clamp(24px,2vw,30px)}
+.home-news .news-list article h3{font-size:17px;line-height:1.55;word-break:keep-all}
+.mono-text-link,.text-link,.home-program-rows a,.minimal-service-list>a{letter-spacing:-.015em}
+.mono-text-link{gap:0;padding-bottom:6px}
+.home-section-heading{gap:35px}
+.history-item p,.record-item p,.program-block p,.renew-card p{font-size:14px!important;line-height:1.75;word-break:keep-all}
+@media(max-width:800px){
+ .intro-row{grid-template-columns:1fr;gap:16px}
+ .intro-row>div{max-width:620px}
+ .minimal-company-intro{padding:54px 0}
+ .intro-row p{font-size:15px!important}
+ .home-section-heading p,.renew-lead{font-size:14px!important}
+}
+@media(max-width:560px){
+ .intro-row p{font-size:15px!important;line-height:1.78!important}
+ .home-section-heading{gap:16px}
+}
