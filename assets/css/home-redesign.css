@@ -254,3 +254,14 @@
   .renewal-home .r-full-art-stage{padding-top:100px;padding-bottom:16px}
   .renewal-home .r-full-art-hero .r-hero-art{margin-top:26px;width:100%}
 }
+
+
+/* Match image-embedded near-black (#060606–#0B0B0B) to #000000 page.
+   Preserve all source artwork and contain layout without cropping. */
+.renewal-home .r-full-art-hero,
+.renewal-home .r-full-art-stage{background-color:#000000!important}
+.renewal-home .r-full-art-hero .r-hero-art{
+  filter:contrast(1.20)!important;
+  object-fit:contain!important;
+  background-color:#000000;
+}
