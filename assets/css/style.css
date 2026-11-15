@@ -68,3 +68,69 @@
 .renew-home-copy h1{font-size:clamp(32px,3vw,42px)}
 @media(max-width:800px){.renew-page-hero,.subpage-header{padding:112px 0 50px}.renew-section,.section{padding-top:52px;padding-bottom:52px}.renew-page-hero h1{font-size:29px}.renew-section h2,.section h2{font-size:25px}.renew-card{padding:19px}.renew-card h3{font-size:17px}.renew-lead{margin-bottom:25px}.renew-contact-band{padding:60px 0}}
 @media(max-width:560px){.renew-page-hero,.subpage-header{padding:100px 0 45px}.renew-section,.section{padding-top:46px;padding-bottom:46px}.renew-page-hero h1{font-size:27px}.renew-section h2,.section h2{font-size:24px}.renew-card{padding:18px}.audience-grid .renew-card{min-height:145px}.renew-home-copy h1{font-size:clamp(29px,7vw,36px)}}
+
+/* Editorial redesign v3 — minimal content hierarchy, no decorative eyebrow banners */
+:root{--paper:#fff;--ink:#111;--muted:#6b6b6b;--line:#e5e5e5}
+body{background:#fff;color:#171717}
+.site-header{background:#000;color:#fff}
+.site-header.scrolled,.site-header.menu-open{background:#000;color:#fff}
+.editorial-intro,.renew-page-hero{background:#fff;color:#161616;border-bottom:1px solid #e9e9e9;padding:124px 0 43px;min-height:0}
+.editorial-intro .container{display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+.editorial-intro h1,.renew-page-hero h1{font-size:clamp(28px,2.25vw,34px);color:#151515;letter-spacing:-.05em;line-height:1.35;font-weight:700;margin:0 0 10px}
+.editorial-intro p:last-child,.renew-page-hero p:last-child{font-size:14px;line-height:1.75;color:#737373;max-width:700px;margin:0}
+.renew-section,.section{padding:64px 0;border:0;background:#fff}
+.renew-section:nth-child(even){background:#fff}
+.renew-section:not(:last-child){border-bottom:1px solid #f0f0f0}
+.renew-section .section-kicker{font-size:12px;color:#686868;font-weight:500;letter-spacing:0;margin:0 0 12px}
+.renew-section h2,.section h2,.gallery-section h2,.news-section h2{font-size:clamp(24px,2vw,30px);font-weight:700;letter-spacing:-.052em;line-height:1.33;margin:0 0 11px;color:#151515}
+.renew-section .renew-lead{font-size:14px;color:#777;line-height:1.75;max-width:720px;margin-bottom:29px}
+.renew-grid{gap:0;border-top:1px solid #d6d6d6;border-bottom:1px solid #e7e7e7}
+.renew-grid .renew-card{border:0;border-right:1px solid #ececec;background:transparent;border-radius:0;padding:25px 23px 26px 0;min-height:0;margin-right:22px}
+.renew-grid .renew-card:last-child{border-right:0}
+.renew-grid .renew-card h3{font-size:18px;line-height:1.45;letter-spacing:-.035em;margin:0 0 9px}
+.renew-grid .renew-card p{color:#777;font-size:13px;line-height:1.75}
+.audience-list{display:block;border-top:1px solid #202020;border-bottom:1px solid #e4e4e4}
+.audience-list .renew-card{position:relative;display:grid;grid-template-columns:200px minmax(0,1fr) auto;align-items:center;column-gap:24px;min-height:0;padding:19px 4px;background:none;border:0;border-bottom:1px solid #ececec}
+.audience-list .renew-card:last-child{border-bottom:0}
+.audience-list .renew-card h3{font-size:18px;font-weight:650;margin:0}
+.audience-list .renew-card p{font-size:13px;margin:0;color:#777}
+.audience-list .renew-card .text-link{margin:0;padding:0;border:0;font-size:12px;text-decoration:none}
+.audience-list .renew-card:hover h3,.audience-list .renew-card:hover .text-link{color:#666}
+.evidence-grid{border-top:1px solid #d4d4d4;border-bottom:1px solid #e5e5e5}
+.evidence-grid>div{padding:23px 24px 21px 0;border-right:0}
+.evidence-grid strong{font-size:clamp(32px,3vw,44px);letter-spacing:-.055em;font-weight:680}
+.evidence-grid small{font-size:12px}
+.evidence-grid p{font-size:12px;color:#777;margin-top:7px}
+.renew-card .text-link,.text-link{color:#222;font-weight:600}
+.renew-note{font-size:12px;line-height:1.7;color:#888}
+.renew-page-hero .eyebrow,.renew-section .eyebrow,.editorial-intro .eyebrow{display:none}
+.program-block{padding:25px 0;border-bottom:1px solid #e7e7e7}
+.program-block h2{font-size:23px}
+.program-block .eyebrow{display:block;font-size:12px;letter-spacing:0;margin-bottom:8px}
+.program-block p{font-size:14px}
+.program-block .round-button{font-size:12px;padding:11px 16px;gap:20px;background:#111}
+.lecture-detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.lecture-detail-grid .renew-card{border-right:0;border-bottom:1px solid #ececec;margin-right:0}
+.lecture-detail-grid .renew-card:nth-child(odd){margin-right:28px}
+.lecture-detail-grid .renew-card h3{font-size:17px}
+.history-item{padding:25px 0}
+.history-year{font-size:27px}
+.history-item h3,.record-item h3{font-size:17px}
+.history-item p,.record-item p{font-size:13px}
+.record-item{padding:20px 0}
+.history-preview>div{border:0;border-top:1px solid #ddd;background:none;padding:22px 5px;min-height:0}
+.history-preview strong{font-size:27px}
+.news-list article{padding:20px 0}
+.news-list h3{font-size:17px}
+.renew-contact-band{background:#080808;color:#fff;padding:70px 0}
+.renew-contact-band .eyebrow{display:none}
+.renew-contact-band h2{font-size:clamp(25px,2.5vw,34px);font-weight:650}
+.renew-home-hero{background:#000}
+.renew-home-copy h1{font-size:clamp(30px,3vw,42px)}
+.section-actions{margin-top:25px}
+.section-actions .round-button{font-size:12px;padding:11px 17px;gap:20px}
+.renew-section .partner-grid{border-color:#eee}
+.renew-section .partner-grid .media-tile{border-color:#eee}
+@media(max-width:900px){.audience-list .renew-card{grid-template-columns:140px minmax(0,1fr) auto}.lecture-detail-grid{grid-template-columns:1fr}.lecture-detail-grid .renew-card:nth-child(odd){margin-right:0}}
+@media(max-width:800px){.editorial-intro,.renew-page-hero{padding:102px 0 36px}.renew-section,.section{padding:48px 0}.renew-section h2,.section h2{font-size:25px}.renew-grid .renew-card{padding:20px 16px 19px 0;margin-right:13px}}
+@media(max-width:560px){.editorial-intro,.renew-page-hero{padding:95px 0 30px}.editorial-intro h1,.renew-page-hero h1{font-size:27px}.renew-section,.section{padding:43px 0}.renew-section h2,.section h2{font-size:23px}.renew-grid{grid-template-columns:1fr}.renew-grid .renew-card{border-right:0;border-bottom:1px solid #eee;margin-right:0}.renew-grid .renew-card:last-child{border-bottom:0}.audience-list .renew-card{grid-template-columns:1fr auto;gap:6px 12px;padding:16px 0}.audience-list .renew-card h3{grid-column:1}.audience-list .renew-card p{grid-column:1;grid-row:2}.audience-list .renew-card .text-link{grid-column:2;grid-row:1/span 2}.evidence-grid>div{padding:18px 0}.history-preview{gap:5px}.renew-contact-band{padding:52px 0}}
