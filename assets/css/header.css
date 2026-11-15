@@ -23,3 +23,19 @@
   .site-header .mobile-nav{width:100%;padding:18px 20px!important}
   .site-header .mobile-nav a{font-size:16px!important;padding:12px 0!important}
 }
+
+
+/* External Q-shop and blog navigation: retain a single-row header where space allows */
+.site-header .desktop-nav{gap:clamp(10px,1.12vw,18px)!important}
+.site-header .desktop-nav>a:not(.nav-cta){font-size:13px!important}
+@media(max-width:1310px){
+ .site-header .desktop-nav{gap:10px!important}
+ .site-header .desktop-nav>a:not(.nav-cta){font-size:12px!important}
+ .site-header .brand-lockup{width:165px!important}
+ .site-header .desktop-nav .nav-cta{padding:10px 15px!important}
+}
+@media(max-width:1080px){
+ .site-header .desktop-nav{display:none!important}
+ .site-header .menu-toggle{display:block!important}
+ .site-header .mobile-nav{background:#000!important}
+}
