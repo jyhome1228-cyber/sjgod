@@ -19,7 +19,7 @@
  }
  const history=document.getElementById('og-timeline');
  if(history){
-  const records=(window.SJGOD_HISTORY||[]).slice().sort((a,b)=>Number(a.year)-Number(b.year));
+  const records=(window.SJGOD_HISTORY||[]).slice().sort((a,b)=>Number(b.year)-Number(a.year));
   records.forEach(record=>{
     const article=document.createElement('article');article.className='og-timeline-year';
     const year=document.createElement('h3');year.textContent=record.year;
