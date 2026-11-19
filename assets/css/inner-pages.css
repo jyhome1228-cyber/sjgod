@@ -86,3 +86,39 @@ main:not(.site-home) .company-history .history-events li:before{display:none!imp
  main:not(.site-home) .company-history .history-events li{font-size:13px!important;line-height:1.72!important}
  main:not(.site-home) .company-history>.container>.renew-lead{margin-bottom:48px!important}
 }
+
+
+/* Inquiry page: clear three-way selection, not another generic corporate card grid. */
+.contact-page .contact-content{max-width:1120px!important}
+.contact-page .inquiry-type-fieldset{border:0;padding:0;margin:0 0 43px;min-width:0}
+.contact-page .inquiry-type-fieldset legend{font-size:16px;font-weight:650;margin-bottom:18px;color:#eee;padding:0}
+.contact-page .inquiry-type-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.contact-page .inquiry-type-option{position:relative;display:block;cursor:pointer}
+.contact-page .inquiry-type-option input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;z-index:1}
+.contact-page .inquiry-type-option>span{min-height:116px;border:1px solid #414141;border-radius:7px;background:#0b0b0b;padding:23px 21px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,background .2s}
+.contact-page .inquiry-type-option strong{font-size:18px;font-weight:690;color:#f7f7f7}
+.contact-page .inquiry-type-option small{font-size:13px;font-weight:400;line-height:1.6;color:#aaa}
+.contact-page .inquiry-type-option input:checked+span{border-color:#f0f0f0;background:#1b1b1b}
+.contact-page .inquiry-type-option input:focus-visible+span{outline:2px solid #fff;outline-offset:3px}
+.contact-page .inquiry-form-fields{border-top:1px solid #444;padding-top:35px}
+.contact-page .inquiry-form-fields h3{font-size:22px;font-weight:690;letter-spacing:-.035em;margin:0 0 27px}
+.contact-page .inquiry-form [hidden]{display:none!important}
+.contact-page .inquiry-form .inquiry-grid{gap:23px 22px}
+.contact-page .inquiry-form .inquiry-grid>label{font-size:14px;font-weight:560;line-height:1.6}
+.contact-page .inquiry-form input:not([type=radio]):not([type=checkbox]),.contact-page .inquiry-form select,.contact-page .inquiry-form textarea{font-size:15px!important;min-height:50px;border:1px solid #3a3a3a;background:#080808;color:#fff;border-radius:3px;padding:13px 15px}
+.contact-page .inquiry-form textarea{min-height:150px;resize:vertical}
+.contact-page .inquiry-form .wide-label{margin-top:23px;display:block;font-size:14px;font-weight:560}
+.contact-page .inquiry-form .form-check{margin-top:22px}
+.contact-page .contact-send-note{font-size:13px;line-height:1.8;color:#999;margin:19px 0 23px;max-width:750px}
+.contact-page .inquiry-submit{font-size:14px!important;font-weight:650!important;padding:14px 28px!important}
+.contact-page .contact-direct{border-top:1px solid #393939;display:flex;align-items:center;flex-wrap:wrap;gap:12px 30px;margin-top:68px;padding-top:25px}
+.contact-page .contact-direct p{color:#aaa;font-size:14px}
+.contact-page .contact-direct a{color:#fff;font-size:18px;font-weight:620}
+.contact-page .contact-direct span{font-size:14px;color:#aaa}
+@media(max-width:720px){
+ .contact-page .inquiry-type-grid{grid-template-columns:1fr;gap:9px}
+ .contact-page .inquiry-type-option>span{min-height:0;padding:17px 19px;gap:4px}
+ .contact-page .inquiry-type-option strong{font-size:16px}
+ .contact-page .inquiry-form-fields{padding-top:28px}
+ .contact-page .contact-direct{margin-top:48px}
+}
