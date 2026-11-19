@@ -25,3 +25,23 @@ menuToggle?.addEventListener('click', () => {
 });
 mobileNav?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+
+/* Lightweight scroll reveal; elements remain visible without JS or with reduced motion. */
+document.addEventListener('DOMContentLoaded', () => {
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const items = [...document.querySelectorAll(
+    '.og-timeline-year, .company-history .history-item, .og-portfolio h2, .og-statement h2, .sh-section-head, .og-news-top, .sh-history-layout'
+  )];
+  if (!items.length) return;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -35px 0px' });
+  items.forEach(el => {
+    el.classList.add('motion-reveal');
+    observer.observe(el);
+  });
+});
