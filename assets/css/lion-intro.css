@@ -1,34 +1,14 @@
-/* Lion intro — original SVG, staggered odd/even mane, no glow or sparkle. */
-.lion-intro{position:fixed;inset:0;z-index:99999;background:#000;color:#fff;display:grid;place-items:center;isolation:isolate;overflow:hidden;opacity:1;visibility:visible;transition:opacity .58s ease,visibility .58s ease}
+/* Opening animation: preserve the first staggered ray-by-ray reveal. No sparkle. */
+.lion-intro{position:fixed;inset:0;z-index:99999;background:#000;color:#fff;display:grid;place-items:center;isolation:isolate;overflow:hidden;opacity:1;visibility:visible;transition:opacity .56s ease,visibility .56s ease}
 .lion-intro.is-ending{opacity:0;visibility:hidden;pointer-events:none}
 .lion-intro-stage{position:relative;width:min(440px,62vw);aspect-ratio:560/310;display:grid;place-items:center}
 .lion-intro-symbol{display:block;width:100%;height:100%;overflow:visible}
-.lion-intro-core{opacity:0;transform-box:fill-box;transform-origin:50% 85%;animation:lion-core-enter .55s .13s cubic-bezier(.2,.76,.24,1) forwards}
-.lion-intro-core-0,.lion-intro-core-1{animation-delay:.26s}
-.lion-intro-ray{opacity:0;transform-box:fill-box;transform-origin:center bottom;animation-duration:2.5s;animation-timing-function:ease-in-out;animation-fill-mode:forwards;animation-delay:.63s}
-.lion-intro-ray-odd{animation-name:lion-rays-odd}
-.lion-intro-ray-even{animation-name:lion-rays-even}
+.lion-intro-core{opacity:0;transform-box:fill-box;transform-origin:50% 85%;animation:lion-core-enter .56s .16s cubic-bezier(.15,.85,.3,1) both}
+.lion-intro-core-0,.lion-intro-core-1{animation-delay:.37s}
+.lion-intro-ray{opacity:0;transform-box:fill-box;transform-origin:center bottom;animation:lion-ray-arrive .42s cubic-bezier(.15,.85,.24,1.18) both;animation-delay:calc(.7s + var(--ray-index)*.115s)}
 .lion-intro-skip{position:absolute;bottom:max(30px,env(safe-area-inset-bottom));right:max(32px,calc((100vw - 1440px)/2));border:1px solid #555;color:#ddd;background:transparent;border-radius:30px;padding:10px 17px;font-size:13px;letter-spacing:-.02em;cursor:pointer}
 .lion-intro-skip:hover,.lion-intro-skip:focus-visible{border-color:#fff;color:#fff}
-@keyframes lion-core-enter{from{opacity:0;transform:translateY(9px) scale(.96)}to{opacity:1;transform:none}}
-/* The first, third, fifth, seventh and ninth rays rise as the others recede. */
-@keyframes lion-rays-odd{
-  0%{opacity:0;transform:translateY(15px) scale(.86)}
-  13%{opacity:1;transform:none}
-  27%{opacity:1}
-  39%{opacity:.13}
-  51%{opacity:1}
-  65%{opacity:.13}
-  79%,100%{opacity:1;transform:none}
-}
-/* The second, fourth, sixth and eighth rays take the opposite phase. */
-@keyframes lion-rays-even{
-  0%,13%{opacity:0;transform:translateY(15px) scale(.86)}
-  27%{opacity:.13;transform:none}
-  39%{opacity:1}
-  51%{opacity:.13}
-  65%{opacity:1}
-  79%,100%{opacity:1;transform:none}
-}
+@keyframes lion-core-enter{0%{opacity:0;transform:translateY(12px) scale(.91)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes lion-ray-arrive{0%{opacity:0;transform:translateY(30px) scale(.35)}45%{opacity:1}80%{transform:translateY(-3px) scale(1.06)}100%{opacity:1;transform:translateY(0) scale(1)}}
 @media(max-width:650px){.lion-intro-stage{width:min(330px,76vw)}.lion-intro-skip{bottom:24px;right:20px}}
 @media(prefers-reduced-motion:reduce){.lion-intro{display:none!important}.lion-intro *{animation:none!important;transition:none!important}}
