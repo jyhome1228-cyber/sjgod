@@ -119,3 +119,29 @@
 @media(max-width:650px){
   .site-home .sh-brand-symbol-description p{font-size:16px!important;line-height:1.8!important}
 }
+
+
+/* Story-section logo: independently alternating odd/even mane rays. */
+.site-home .sh-brand-symbol-art .sh-brand-animated-svg{
+ display:block;width:min(100%,430px);height:auto;max-height:270px;overflow:visible;
+ color:#fff;filter:none!important;
+}
+.site-home .sh-brand-mane{opacity:1}
+@media(prefers-reduced-motion:no-preference){
+ .site-home .sh-brand-mane-odd{animation:sh-mane-odd 3.2s ease-in-out infinite}
+ .site-home .sh-brand-mane-even{animation:sh-mane-even 3.2s ease-in-out infinite}
+ @keyframes sh-mane-odd{
+   0%,9%,46%,56%,94%,100%{opacity:1}
+   24%,34%,72%,82%{opacity:.16}
+ }
+ @keyframes sh-mane-even{
+   0%,9%,46%,56%,94%,100%{opacity:.16}
+   24%,34%,72%,82%{opacity:1}
+ }
+}
+@media(max-width:650px){
+ .site-home .sh-brand-symbol-art .sh-brand-animated-svg{width:220px;max-height:150px}
+}
+@media(prefers-reduced-motion:reduce){
+ .site-home .sh-brand-mane{animation:none!important;opacity:1!important}
+}
