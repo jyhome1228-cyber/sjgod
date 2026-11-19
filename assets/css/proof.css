@@ -21,3 +21,19 @@
 @media(max-width:1000px){.proof-document-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:700px){.proof-document-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.proof-document-trigger{padding:10px}.proof-document figcaption{padding:13px 12px}}
 @media(max-width:450px){.proof-document-grid{grid-template-columns:1fr 1fr;gap:9px}.proof-document-trigger{padding:8px}.proof-document figcaption strong{font-size:13px}.proof-document figcaption{padding:12px 9px}}
+
+
+/* Clean certificate gallery: image-only presentation */
+.proof-section .proof-document-grid{gap:24px}
+.proof-section .proof-document{border:0!important;border-radius:0!important;background:transparent!important}
+.proof-section .proof-document-trigger{
+ padding:0!important;aspect-ratio:auto!important;
+ min-height:0!important;background:transparent!important;overflow:visible;
+}
+.proof-section .proof-document-trigger img{
+ width:100%!important;height:auto!important;aspect-ratio:1280/1702;
+ object-fit:contain!important;background:transparent!important;
+}
+.proof-section .proof-document-trigger:hover{background:transparent!important;opacity:.91}
+.proof-section .proof-page-heading,.proof-section .proof-note,.proof-section figcaption{display:none!important}
+@media(max-width:700px){.proof-section .proof-document-grid{gap:15px}}
