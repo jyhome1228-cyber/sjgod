@@ -1,0 +1,54 @@
+/* Sajagaonda inner pages — coherent extension of existing monochrome brand */
+main:not(.site-home){background:#000;color:#eee}
+main:not(.site-home) .container{max-width:1440px}
+main:not(.site-home) .renew-page-hero{min-height:0!important;padding:132px 0 65px!important;background:#000!important;border-bottom:1px solid #333}
+main:not(.site-home) .renew-page-hero h1{font-size:clamp(29px,3vw,41px)!important;line-height:1.35!important;font-weight:710!important;letter-spacing:-.05em!important;margin:0 0 15px!important}
+main:not(.site-home) .renew-page-hero p{font-size:16px!important;color:#b9b9b9!important;line-height:1.8!important;max-width:700px;word-break:keep-all}
+main:not(.site-home) .renew-section{padding:76px 0!important;background:#000!important;border-bottom:1px solid #292929}
+main:not(.site-home) .renew-section h2{font-size:clamp(25px,2.25vw,33px)!important;font-weight:685!important;line-height:1.42!important;letter-spacing:-.045em!important;margin-bottom:14px!important}
+main:not(.site-home) .renew-section .renew-lead{font-size:15px!important;color:#b6b6b6!important;max-width:750px!important;line-height:1.85!important;word-break:keep-all;margin-bottom:28px!important}
+main:not(.site-home) .section-kicker{display:none!important}
+main:not(.site-home) .renew-grid{gap:15px!important}
+main:not(.site-home) .renew-card{background:#0c0c0c!important;border:1px solid #303030!important;border-radius:8px!important;padding:27px!important;box-shadow:none!important;min-height:0!important}
+main:not(.site-home) .renew-card h3{font-size:20px!important;font-weight:670!important;line-height:1.45!important;margin:0 0 13px!important}
+main:not(.site-home) .renew-card p{color:#bcbcbc!important;font-size:15px!important;line-height:1.8!important}
+main:not(.site-home) .renew-card a{font-size:14px!important}
+main:not(.site-home) .program-list{border-top:1px solid #585858!important}
+main:not(.site-home) .program-block{background:#000!important;border:0!important;border-bottom:1px solid #333!important;border-radius:0!important;padding:28px 0!important}
+main:not(.site-home) .program-block h2{font-size:24px!important;margin-bottom:12px!important}
+main:not(.site-home) .program-block p{font-size:15px!important;line-height:1.75!important;color:#d4d4d4!important}
+main:not(.site-home) .program-block .muted{color:#a0a0a0!important}
+main:not(.site-home) .program-block .eyebrow{font-size:13px!important;color:#888!important}
+main:not(.site-home) .record-list{border-top:1px solid #5a5a5a}
+main:not(.site-home) .filterbar{border-color:#343434!important}
+main:not(.site-home) .round-button{font-size:14px!important}
+main:not(.site-home) .company-identity-original{padding-top:95px!important}
+main:not(.site-home) .company-identity-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:clamp(35px,7vw,120px);align-items:center}
+main:not(.site-home) .company-identity-grid h2{font-size:clamp(32px,3.2vw,44px)!important}
+main:not(.site-home) .company-identity-title{font-size:clamp(20px,2vw,26px)!important;font-weight:610!important;line-height:1.65!important;color:#f2f2f2!important;margin:12px 0 20px!important}
+main:not(.site-home) .company-identity-grid p:not(.company-identity-title){font-size:15px;line-height:1.96;color:#b9b9b9;margin:0 0 17px;word-break:keep-all}
+main:not(.site-home) .company-identity-grid figure{margin:0;text-align:center}
+main:not(.site-home) .company-identity-grid figure img{display:block;max-width:100%;max-height:370px;width:100%;object-fit:contain}
+main:not(.site-home) .company-identity-grid figcaption{font-size:13px;color:#929292;line-height:1.7;margin-top:15px}
+main:not(.site-home) .company-identity-principle{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:end;margin-top:75px;padding-top:44px;border-top:1px solid #373737}
+main:not(.site-home) .company-identity-principle h3{font-size:clamp(23px,2.3vw,31px);font-weight:680;line-height:1.5;letter-spacing:-.04em;margin:0}
+main:not(.site-home) .company-identity-principle p{font-size:15px;color:#aaa;line-height:1.95;margin:0}
+main:not(.site-home) .company-history .history-item{border-color:#363636}
+main:not(.site-home) .company-history .history-year{font-size:clamp(24px,2.6vw,34px)!important}
+main:not(.site-home) .company-history .history-events li{font-size:15px!important;line-height:1.8!important;word-break:keep-all}
+@media(max-width:800px){
+ main:not(.site-home) .renew-page-hero{padding:105px 0 48px!important}
+ main:not(.site-home) .renew-page-hero h1{font-size:30px!important}
+ main:not(.site-home) .renew-page-hero p{font-size:15px!important}
+ main:not(.site-home) .renew-section{padding:55px 0!important}
+ main:not(.site-home) .company-identity-grid,.site-home .company-identity-principle,main:not(.site-home) .company-identity-principle{grid-template-columns:1fr;gap:30px}
+ main:not(.site-home) .company-identity-grid figure img{max-height:280px}
+ main:not(.site-home) .company-identity-principle{margin-top:48px;padding-top:29px}
+}
+@media(max-width:540px){
+ main:not(.site-home) .renew-page-hero{padding:96px 0 38px!important}
+ main:not(.site-home) .renew-section h2{font-size:25px!important}
+ main:not(.site-home) .renew-card{padding:22px!important}
+ main:not(.site-home) .program-block{padding:22px 0!important}
+ main:not(.site-home) .company-identity-grid h2{font-size:33px!important}
+}
