@@ -62,3 +62,36 @@
 @media(prefers-reduced-motion:reduce){
   .motion-reveal{opacity:1!important;transform:none!important;transition:none!important}
 }
+
+
+/* Brand route loader. Separate from the first-visit logo intro. */
+.sj-page-loader{
+  position:fixed;inset:0;z-index:99998;display:grid;place-items:center;
+  background:#000;color:#fff;opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .18s ease,visibility .18s ease;
+}
+.sj-page-loader.is-active{opacity:1;visibility:visible;pointer-events:auto}
+.sj-page-loader-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px}
+.sj-page-loader svg{width:clamp(115px,15vw,175px);height:auto;overflow:visible;display:block}
+.sj-page-loader .sj-loader-ray{
+  opacity:.14;
+  transform-box:fill-box;
+  transform-origin:center bottom;
+  animation:sj-page-turn 1.14s ease-in-out infinite;
+  animation-delay:calc(var(--page) * .105s);
+}
+@keyframes sj-page-turn{
+  0%,100%{opacity:.14;transform:scaleY(.92)}
+  34%,57%{opacity:1;transform:scaleY(1)}
+  72%{opacity:.24}
+}
+.sj-page-loader-dots{display:flex;align-items:center;justify-content:center;gap:8px;height:9px}
+.sj-page-loader-dots i{width:5px;height:5px;background:#fff;border-radius:50%;opacity:.25;animation:sj-dots-pulse 1.1s ease-in-out infinite}
+.sj-page-loader-dots i:nth-child(2){animation-delay:.17s}
+.sj-page-loader-dots i:nth-child(3){animation-delay:.34s}
+@keyframes sj-dots-pulse{0%,65%,100%{opacity:.2;transform:translateY(0)}32%{opacity:1;transform:translateY(-3px)}}
+.sj-page-loader-caption{font-size:12px;font-weight:400;color:#a4a4a4;letter-spacing:-.015em}
+@media(prefers-reduced-motion:reduce){
+  .sj-page-loader .sj-loader-ray,.sj-page-loader-dots i{animation:none!important;opacity:1!important;transform:none!important}
+  .sj-page-loader{transition:none!important}
+}
