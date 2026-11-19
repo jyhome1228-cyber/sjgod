@@ -11,7 +11,7 @@
      figure.append(img);track.append(figure);
    });
    let index=0;const slides=[...track.children],count=document.getElementById('og-work-count');
-   function move(n){index=(n+slides.length)%slides.length;slides[index].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'center'});count.textContent=String(index+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0')}
+   function move(n){index=(n+slides.length)%slides.length;track.scrollTo({left:slides[index].offsetLeft-(track.clientWidth-slides[index].clientWidth)/2,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});count.textContent=String(index+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0')}
    document.getElementById('og-work-prev')?.addEventListener('click',()=>move(index-1));
    document.getElementById('og-work-next')?.addEventListener('click',()=>move(index+1));
    track.addEventListener('scroll',()=>{const viewport=track.getBoundingClientRect();let best=0,min=Infinity;slides.forEach((el,i)=>{let d=Math.abs((el.getBoundingClientRect().left+el.clientWidth/2)-(viewport.left+viewport.width/2));if(d<min){min=d;best=i}});index=best;count.textContent=String(index+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0')},{passive:true});
