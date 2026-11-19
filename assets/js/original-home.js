@@ -94,7 +94,9 @@
    requestAnimationFrame(()=>{
      cycle=getCycle();
      if(cycle){
-       track.scrollLeft=cycle;
+       const featured=slides[total+2] || slides[total];
+       track.scrollLeft=featured.offsetLeft-track.offsetLeft-(track.clientWidth-featured.clientWidth)/2;
+       normalise();
        updateCounter();
        frameId=requestAnimationFrame(tick);
      }
