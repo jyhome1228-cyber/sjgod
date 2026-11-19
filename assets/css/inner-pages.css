@@ -171,3 +171,23 @@ main:not(.site-home) .company-history .history-events li:before{display:none!imp
  .solution-explorer .solution-panel-content{animation:none!important}
  .solution-explorer .solution-tabs [role="tab"]{transition:none!important}
 }
+
+
+/* Source-led solution detail content: readable paragraphs and feature structure */
+.solution-explorer .solution-panel-content{max-width:1030px;padding-bottom:63px}
+.solution-explorer .solution-description{max-width:900px;display:grid;gap:15px;margin:0 0 33px}
+.solution-explorer .solution-description p{font-size:15px!important;color:#bbb!important;line-height:1.93!important;margin:0!important;word-break:keep-all}
+.solution-explorer .solution-steps{border-top:1px solid #383838;padding:27px 0 6px;margin-top:28px}
+.solution-explorer .solution-steps h4{font-size:17px;font-weight:680;margin:0 0 22px;color:#f3f3f3}
+.solution-explorer .solution-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:23px 35px}
+.solution-explorer .solution-feature-grid>div{border-bottom:1px solid #292929;padding:0 0 22px}
+.solution-explorer .solution-feature-grid strong{display:block;font-size:15px;font-weight:640;color:#f3f3f3;margin-bottom:8px}
+.solution-explorer .solution-feature-grid p{font-size:14px!important;line-height:1.8!important;color:#a7a7a7!important;margin:0!important;word-break:keep-all}
+.solution-explorer .solution-evidence-note{font-size:12px!important;color:#888!important;margin:0 0 24px!important;line-height:1.75!important}
+.solution-explorer .solution-detail-lines{margin-top:32px}
+@media(max-width:580px){
+ .solution-explorer .solution-feature-grid{grid-template-columns:1fr;gap:16px}
+ .solution-explorer .solution-feature-grid>div{padding-bottom:16px}
+ .solution-explorer .solution-description p{font-size:14px!important}
+ .solution-explorer .solution-panel-content{padding-bottom:40px}
+}
