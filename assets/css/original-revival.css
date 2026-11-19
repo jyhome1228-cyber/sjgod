@@ -83,3 +83,24 @@
  .site-home .og-news-body{flex-direction:column;align-items:flex-start;padding:12px}
 }
 @media(prefers-reduced-motion:reduce){.site-home .og-work-track{scroll-behavior:auto!important}.site-home .og-news-chevron{transition:none}}
+
+
+/* Original brand symbol story — directly under the illustrated hero */
+.site-home .sh-brand-symbol{background:#171719!important;border-bottom:0;padding:90px 0 100px}
+.site-home .sh-brand-symbol-inner{display:grid;grid-template-columns:minmax(290px,.85fr) minmax(0,1.6fr);gap:clamp(55px,7vw,130px);align-items:center}
+.site-home .sh-brand-symbol-art{display:flex;justify-content:center;align-items:center;min-width:0}
+.site-home .sh-brand-symbol-art img{display:block;width:min(100%,430px);height:auto;max-height:270px;object-fit:contain;filter:none}
+.site-home .sh-brand-symbol-description p{font-size:clamp(17px,1.45vw,23px);line-height:1.55;font-weight:430;letter-spacing:-.038em;color:#f2f2f2;word-break:keep-all}
+@media(max-width:900px){
+ .site-home .sh-brand-symbol{padding:70px 0}
+ .site-home .sh-brand-symbol-inner{grid-template-columns:minmax(170px,.75fr) minmax(0,1.25fr);gap:36px}
+ .site-home .sh-brand-symbol-description p{font-size:17px}
+}
+@media(max-width:650px){
+ .site-home .sh-brand-symbol{padding:55px 0 65px}
+ .site-home .sh-brand-symbol-inner{grid-template-columns:1fr;gap:30px}
+ .site-home .sh-brand-symbol-art{justify-content:flex-start}
+ .site-home .sh-brand-symbol-art img{width:220px;max-height:150px}
+ .site-home .sh-brand-symbol-description p{font-size:16px;line-height:1.8}
+ .site-home .sh-brand-symbol-description br{display:none}
+}
