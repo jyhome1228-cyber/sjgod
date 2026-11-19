@@ -187,3 +187,51 @@
  .site-home .sh-partners-original{padding-bottom:55px!important}
  .site-home .og-statement h2{font-size:26px!important}
 }
+
+
+/* Portfolio carousel correction — balanced editorial strip instead of huge blank gutter */
+.site-home .og-portfolio{padding:78px 0 72px!important}
+.site-home .og-portfolio h2{margin-bottom:44px!important}
+.site-home .og-work-window{width:100%;overflow:hidden}
+.site-home .og-work-track{
+ display:flex!important;
+ align-items:center!important;
+ gap:22px!important;
+ padding:12px 20px 14px!important;
+ width:100%!important;
+ scroll-padding-inline:20px!important;
+ scroll-snap-type:x proximity!important;
+ overscroll-behavior-x:contain;
+}
+.site-home .og-work-slide{
+ flex:0 0 clamp(285px,24vw,400px)!important;
+ width:clamp(285px,24vw,400px)!important;
+ height:330px!important;
+ display:flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+ overflow:hidden;
+ scroll-snap-align:center;
+}
+.site-home .og-work-slide img{
+ width:100%!important;
+ height:100%!important;
+ max-width:100%;
+ max-height:100%;
+ object-fit:contain!important;
+ object-position:center!important;
+}
+.site-home .og-work-controls{margin-top:13px!important;gap:29px!important}
+@media(max-width:800px){
+ .site-home .og-portfolio{padding:56px 0!important}
+ .site-home .og-work-slide{
+   flex-basis:min(72vw,350px)!important;width:min(72vw,350px)!important;height:290px!important
+ }
+ .site-home .og-work-track{gap:14px!important;padding:10px 14px!important}
+ .site-home .og-portfolio h2{margin-bottom:30px!important}
+}
+@media(max-width:540px){
+ .site-home .og-work-slide{
+  flex-basis:80vw!important;width:80vw!important;height:260px!important
+ }
+}
