@@ -39,3 +39,26 @@
  .site-header .menu-toggle{display:block!important}
  .site-header .mobile-nav{background:#000!important}
 }
+
+
+/* Motion language shared by original-brand homepage and chronological subpages */
+@media(prefers-reduced-motion:no-preference){
+  .motion-reveal{
+    opacity:0;
+    transform:translate3d(0,22px,0);
+    transition:opacity .75s cubic-bezier(.2,.75,.3,1),transform .75s cubic-bezier(.2,.75,.3,1);
+    will-change:opacity,transform;
+  }
+  .motion-reveal.is-visible{opacity:1;transform:translate3d(0,0,0);will-change:auto}
+  .og-timeline-year.motion-reveal,.company-history .history-item.motion-reveal{
+    transition-duration:.8s;
+  }
+  .og-timeline-year.motion-reveal.is-visible:after,
+  .company-history .history-item.motion-reveal.is-visible:after{
+    animation:sjgod-dot-arrive .65s cubic-bezier(.18,.7,.3,1) both;
+  }
+  @keyframes sjgod-dot-arrive{from{transform:scale(.55);opacity:.25}to{transform:scale(1);opacity:1}}
+}
+@media(prefers-reduced-motion:reduce){
+  .motion-reveal{opacity:1!important;transform:none!important;transition:none!important}
+}
