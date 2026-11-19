@@ -122,3 +122,52 @@ main:not(.site-home) .company-history .history-events li:before{display:none!imp
  .contact-page .inquiry-form-fields{padding-top:28px}
  .contact-page .contact-direct{margin-top:48px}
 }
+
+
+/* Five-service editorial explorer */
+.solution-explorer .solution-container{max-width:1190px!important}
+.solution-explorer .solution-section-intro{margin-bottom:35px}
+.solution-explorer .solution-section-intro h2{font-size:clamp(26px,2.5vw,34px)!important;margin:0 0 12px!important}
+.solution-explorer .solution-section-intro p{font-size:15px;line-height:1.8;color:#aaa;max-width:740px}
+.solution-explorer .solution-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border-bottom:1px solid #4b4b4b;overflow-x:auto;scrollbar-width:thin}
+.solution-explorer .solution-tabs [role="tab"]{
+ display:flex;align-items:center;justify-content:center;text-align:center;min-height:72px;
+ background:transparent;border:0;border-bottom:2px solid transparent;border-radius:0;
+ color:#999;padding:20px 12px;font:inherit;font-size:16px;font-weight:570;
+ letter-spacing:-.035em;white-space:nowrap;cursor:pointer;transition:color .2s,border-color .2s,background .2s;
+}
+.solution-explorer .solution-tabs [role="tab"]:hover{color:#fff;background:#101010}
+.solution-explorer .solution-tabs [role="tab"][aria-selected="true"]{color:#fff;border-bottom-color:#fff;font-weight:700}
+.solution-explorer .solution-tabs [role="tab"]:focus-visible{outline:2px solid #fff;outline-offset:-5px}
+.solution-explorer .solution-panel{background:#090909;border-bottom:1px solid #353535;min-height:390px}
+.solution-explorer .solution-panel[hidden]{display:none!important}
+.solution-explorer .solution-panel-content{max-width:970px;padding:55px 20px 53px 0;animation:solution-panel-enter .35s ease both}
+.solution-explorer .solution-category{font-size:13px!important;color:#999!important;margin:0 0 14px!important;font-weight:520}
+.solution-explorer .solution-panel h3{font-size:clamp(29px,3vw,42px);line-height:1.35;font-weight:700;margin:0 0 15px;letter-spacing:-.046em}
+.solution-explorer .solution-lead{font-size:clamp(17px,1.6vw,21px)!important;font-weight:550;line-height:1.65;color:#eee!important;margin:0 0 22px!important}
+.solution-explorer .solution-panel-content>p:not(.solution-category):not(.solution-lead){font-size:15px;line-height:1.9;color:#aaa;max-width:810px;word-break:keep-all;margin:0 0 28px}
+.solution-explorer .solution-detail-lines{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:30px 0 33px;padding-top:26px;border-top:1px solid #323232}
+.solution-explorer .solution-detail-lines>div{display:grid;gap:8px}
+.solution-explorer .solution-detail-lines strong{font-size:13px;font-weight:650;color:#eee}
+.solution-explorer .solution-detail-lines span{font-size:14px;line-height:1.7;color:#aaa}
+.solution-explorer .solution-action{display:inline-flex;align-items:center;justify-content:center;border:1px solid #fff;color:#000!important;background:#fff;padding:13px 24px;font-size:14px;font-weight:660;text-decoration:none;border-radius:4px}
+.solution-explorer .solution-action:hover{background:#ddd}
+.solution-explorer .solution-disclaimer{font-size:13px;line-height:1.8;color:#777;margin:20px 0 0}
+@keyframes solution-panel-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:800px){
+ .solution-explorer .solution-tabs{grid-template-columns:repeat(5,minmax(140px,1fr))}
+ .solution-explorer .solution-tabs [role="tab"]{font-size:14px;min-height:65px}
+ .solution-explorer .solution-panel-content{padding:38px 4px 40px}
+}
+@media(max-width:550px){
+ .solution-explorer .solution-section-intro{margin-bottom:26px}
+ .solution-explorer .solution-tabs{display:flex}
+ .solution-explorer .solution-tabs [role="tab"]{flex:0 0 auto;padding:17px 16px;min-height:58px}
+ .solution-explorer .solution-detail-lines{grid-template-columns:1fr;gap:19px}
+ .solution-explorer .solution-panel{min-height:0}
+ .solution-explorer .solution-panel h3{font-size:30px}
+}
+@media(prefers-reduced-motion:reduce){
+ .solution-explorer .solution-panel-content{animation:none!important}
+ .solution-explorer .solution-tabs [role="tab"]{transition:none!important}
+}
