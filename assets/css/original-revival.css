@@ -104,3 +104,18 @@
  .site-home .sh-brand-symbol-description p{font-size:16px;line-height:1.8}
  .site-home .sh-brand-symbol-description br{display:none}
 }
+
+
+/* Original brand symbol rendering correction */
+.site-home .sh-brand-symbol-art img{
+  filter:invert(1)!important;
+}
+.site-home .sh-brand-symbol-description p{
+  font-size:clamp(17px,1.45vw,22px)!important;
+  font-weight:400!important;
+  line-height:1.63!important;
+  letter-spacing:-.032em!important;
+}
+@media(max-width:650px){
+  .site-home .sh-brand-symbol-description p{font-size:16px!important;line-height:1.8!important}
+}
