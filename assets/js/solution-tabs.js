@@ -11,8 +11,10 @@
       tab.setAttribute('aria-selected',String(selected));
       tab.tabIndex=selected?0:-1;
       if(selected){
-        tab.scrollIntoView({inline:'nearest',block:'nearest',behavior:'instant'});
-        if(focus)tab.focus({preventScroll:true});
+        if(focus){
+          tab.focus({preventScroll:true});
+          tab.scrollIntoView({inline:'nearest',block:'nearest',behavior:'instant'});
+        }
       }
     });
     panels.forEach(panel=>{
