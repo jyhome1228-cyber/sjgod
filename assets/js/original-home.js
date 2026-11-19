@@ -4,78 +4,101 @@
  const workIds=[72,24,73,25,74,26,27,28];
  const track=document.getElementById('og-work-track');
  if(track){
-   const slideAssets=workIds.map(id=>assets.find(x=>x.id===id)).filter(Boolean);
-   slideAssets.forEach((asset,i)=>{
-     const figure=document.createElement('figure');
-     figure.className='og-work-slide';
-     const img=document.createElement('img');
-     img.src=asset.url;img.alt='사자가온다 콘텐츠 및 프로젝트 이미지 '+(i+1);
-     img.loading=i<4?'eager':'lazy';img.decoding='async';
-     figure.append(img);track.append(figure);
-   });
-   const slides=[...track.children];
+   const works=workIds.map(id=>assets.find(item=>item.id===id)).filter(Boolean);
    const count=document.getElementById('og-work-count');
    const prev=document.getElementById('og-work-prev');
    const next=document.getElementById('og-work-next');
    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-   let index=Math.min(2,Math.max(0,slides.length-1));
-   let programmatic=false;
-   let settleTimer;
-   let autoTimer;
-   let paused=false;
-   const countText=()=>{if(count) count.textContent=String(index+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0')};
-   function centerOn(i,smooth=true){
-     if(!slides.length)return;
-     index=(i+slides.length)%slides.length;
-     const slide=slides[index];
-     const left=slide.offsetLeft-track.offsetLeft-(track.clientWidth-slide.clientWidth)/2;
-     programmatic=true;
-     track.scrollTo({left:Math.max(0,left),behavior:smooth&&!reduced?'smooth':'instant'});
-     countText();
-     window.clearTimeout(settleTimer);
-     settleTimer=window.setTimeout(()=>{programmatic=false},smooth?650:80);
-   }
-   function resetAuto(){
-     window.clearInterval(autoTimer);
-     if(reduced||paused||slides.length<2)return;
-     autoTimer=window.setInterval(()=>{
-       if(document.visibilityState!=='visible'||paused)return;
-       centerOn(index+1,true);
-     },4600);
-   }
-   function navigate(delta){centerOn(index+delta,true);resetAuto()}
+   const total=works.length;
+   const imagesPerSet=total;
+   const renderSlide=(asset,i,cloned)=>{
+     const figure=document.createElement('figure');
+     figure.className='og-work-slide';
+     if(cloned)figure.setAttribute('aria-hidden','true');
+     const img=document.createElement('img');
+     img.src=asset.url;
+     img.alt=cloned?'':'사자가온다 콘텐츠 및 프로젝트 이미지 '+(i+1);
+     img.loading=i<4?'eager':'lazy';
+     img.decoding='async';
+     figure.append(img);
+     return figure;
+   };
+   // Three consecutive identical sets: jump by one set without any visible seam.
+   for(let group=0;group<3;group++)works.forEach((asset,i)=>track.append(renderSlide(asset,i,group!==1)));
+   const slides=[...track.children];
+   let cycle=0, frameId=0, lastFrame=0, paused=false, interactionUntil=0;
+   let currentIndex=0, indicatorFrame=0;
+   const getCycle=()=>slides[imagesPerSet]?.offsetLeft-slides[0]?.offsetLeft||0;
+   const normalise=()=>{
+     if(!cycle)return;
+     const x=track.scrollLeft;
+     if(x>=cycle*2)track.scrollLeft=x-cycle;
+     else if(x<cycle)track.scrollLeft=x+cycle;
+   };
+   const updateCounter=()=>{
+     if(!total||!count)return;
+     const middle=track.getBoundingClientRect().left+track.clientWidth/2;
+     let closest=0,nearest=Infinity;
+     for(let i=total;i<total*2;i++){
+       const rect=slides[i].getBoundingClientRect();
+       const distance=Math.abs(rect.left+rect.width/2-middle);
+       if(distance<nearest){nearest=distance;closest=i-total}
+     }
+     currentIndex=closest;
+     count.textContent=String(currentIndex+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
+   };
+   const onScroll=()=>{
+     if(indicatorFrame)cancelAnimationFrame(indicatorFrame);
+     indicatorFrame=requestAnimationFrame(()=>{normalise();updateCounter();indicatorFrame=0});
+   };
+   track.addEventListener('scroll',onScroll,{passive:true});
+   const tick=timestamp=>{
+     if(lastFrame&&!reduced&&!paused&&timestamp>=interactionUntil&&document.visibilityState==='visible'){
+       const dt=Math.min(timestamp-lastFrame,45);
+       track.scrollLeft+=dt*.045; // About 45px per second; continuous, no timed jumps.
+       normalise();
+     }
+     lastFrame=timestamp;
+     frameId=requestAnimationFrame(tick);
+   };
+   const navigate=direction=>{
+     if(!cycle)return;
+     interactionUntil=performance.now()+2000;
+     const step=(slides[total+1]?.offsetLeft-slides[total]?.offsetLeft)||330;
+     normalise();
+     track.scrollBy({left:direction*step,behavior:reduced?'instant':'smooth'});
+   };
    prev?.addEventListener('click',()=>navigate(-1));
    next?.addEventListener('click',()=>navigate(1));
-   track.addEventListener('scroll',()=>{
-     if(programmatic)return;
-     const rect=track.getBoundingClientRect();
-     const middle=rect.left+rect.width/2;
-     let best=0,minimum=Infinity;
-     slides.forEach((slide,i)=>{
-       const r=slide.getBoundingClientRect();
-       const distance=Math.abs(r.left+r.width/2-middle);
-       if(distance<minimum){minimum=distance;best=i}
-     });
-     index=best;countText();
-   },{passive:true});
-   track.addEventListener('keydown',event=>{
-     if(event.key==='ArrowRight'){event.preventDefault();navigate(1)}
-     if(event.key==='ArrowLeft'){event.preventDefault();navigate(-1)}
+   track.addEventListener('keydown',e=>{
+     if(e.key==='ArrowRight'){e.preventDefault();navigate(1)}
+     if(e.key==='ArrowLeft'){e.preventDefault();navigate(-1)}
    });
-   track.addEventListener('pointerdown',()=>{paused=true;resetAuto()});
-   track.addEventListener('pointerup',()=>{paused=false;resetAuto()});
    const area=track.closest('.og-portfolio');
-   area?.addEventListener('mouseenter',()=>{paused=true;resetAuto()});
-   area?.addEventListener('mouseleave',()=>{paused=false;resetAuto()});
-   area?.addEventListener('focusin',()=>{paused=true;resetAuto()});
-   area?.addEventListener('focusout',event=>{
-     if(area.contains(event.relatedTarget))return;
-     paused=false;resetAuto();
+   area?.addEventListener('mouseenter',()=>{paused=true});
+   area?.addEventListener('mouseleave',()=>{paused=false;interactionUntil=performance.now()+700});
+   area?.addEventListener('focusin',()=>{paused=true});
+   area?.addEventListener('focusout',e=>{if(!area.contains(e.relatedTarget)){paused=false;interactionUntil=performance.now()+700}});
+   track.addEventListener('pointerdown',()=>{paused=true});
+   track.addEventListener('pointerup',()=>{paused=false;interactionUntil=performance.now()+1400});
+   track.addEventListener('pointercancel',()=>{paused=false});
+   window.addEventListener('resize',()=>{
+     const oldCycle=cycle;
+     cycle=getCycle();
+     if(cycle&&oldCycle)track.scrollLeft+=cycle-oldCycle;
+     else if(cycle)track.scrollLeft=cycle;
+     updateCounter();
+   },{passive:true});
+   document.addEventListener('visibilitychange',()=>{lastFrame=0});
+   window.addEventListener('pagehide',()=>{cancelAnimationFrame(frameId)});
+   requestAnimationFrame(()=>{
+     cycle=getCycle();
+     if(cycle){
+       track.scrollLeft=cycle;
+       updateCounter();
+       frameId=requestAnimationFrame(tick);
+     }
    });
-   document.addEventListener('visibilitychange',resetAuto);
-   window.addEventListener('resize',()=>centerOn(index,false),{passive:true});
-   // Start in a balanced central position, with adjacent projects on both sides.
-   requestAnimationFrame(()=>{centerOn(index,false);resetAuto()});
  }
  const history=document.getElementById('og-timeline');
  if(history){
