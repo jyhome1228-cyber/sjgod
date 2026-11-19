@@ -52,3 +52,37 @@ main:not(.site-home) .company-history .history-events li{font-size:15px!importan
  main:not(.site-home) .program-block{padding:22px 0!important}
  main:not(.site-home) .company-identity-grid h2{font-size:33px!important}
 }
+
+
+/* Company chronology mirrors the orange original site timeline */
+main:not(.site-home) .company-history{background:#1a1a1c!important}
+main:not(.site-home) .company-history>.container{max-width:1030px!important}
+main:not(.site-home) .company-history>.container>h2{text-align:center!important;font-size:clamp(28px,2.85vw,39px)!important;margin:0 auto 22px!important}
+main:not(.site-home) .company-history>.container>.renew-lead{text-align:center;max-width:730px!important;margin:0 auto 78px!important}
+main:not(.site-home) .company-history .history-list{border:none!important;max-width:850px;margin:0 auto}
+main:not(.site-home) .company-history .history-item{
+ position:relative;display:grid!important;grid-template-columns:128px minmax(0,1fr)!important;gap:78px!important;
+ padding:0 0 61px!important;border:0!important;background:transparent!important;align-items:start
+}
+main:not(.site-home) .company-history .history-item:before{content:"";position:absolute;top:14px;bottom:-10px;left:154px;width:1px;background:#f47812}
+main:not(.site-home) .company-history .history-item:last-child:before{bottom:calc(100% - 16px)}
+main:not(.site-home) .company-history .history-item:after{content:"";position:absolute;left:148px;top:8px;width:13px;height:13px;border-radius:50%;background:#ff7a0e}
+main:not(.site-home) .company-history .history-year{font-size:32px!important;line-height:1.35!important;color:#ff7a0e!important;font-weight:730!important;text-align:right}
+main:not(.site-home) .company-history .history-events{list-style:none!important;display:grid!important;gap:14px!important;margin:0!important;padding:0!important}
+main:not(.site-home) .company-history .history-events li{font-size:15px!important;line-height:1.75!important;color:#eee!important;padding:0!important;margin:0!important}
+main:not(.site-home) .company-history .history-events li:before{display:none!important}
+@media(max-width:800px){
+ main:not(.site-home) .company-history .history-item{grid-template-columns:79px minmax(0,1fr)!important;gap:38px!important}
+ main:not(.site-home) .company-history .history-item:before{left:96px}
+ main:not(.site-home) .company-history .history-item:after{left:90px}
+ main:not(.site-home) .company-history .history-year{font-size:25px!important}
+ main:not(.site-home) .company-history .history-events li{font-size:14px!important}
+}
+@media(max-width:540px){
+ main:not(.site-home) .company-history .history-item{grid-template-columns:63px minmax(0,1fr)!important;gap:26px!important;padding-bottom:43px!important}
+ main:not(.site-home) .company-history .history-item:before{left:74px}
+ main:not(.site-home) .company-history .history-item:after{left:68px}
+ main:not(.site-home) .company-history .history-year{font-size:22px!important}
+ main:not(.site-home) .company-history .history-events li{font-size:13px!important;line-height:1.72!important}
+ main:not(.site-home) .company-history>.container>.renew-lead{margin-bottom:48px!important}
+}
