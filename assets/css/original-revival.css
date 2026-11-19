@@ -235,3 +235,13 @@
   flex-basis:80vw!important;width:80vw!important;height:260px!important
  }
 }
+
+
+/* Smooth, continuous work gallery: prevent scroll snapping from fighting the motion. */
+.site-home .og-work-track{
+  scroll-snap-type:none!important;
+  scroll-behavior:auto!important;
+  scroll-padding-inline:0!important;
+}
+.site-home .og-work-slide{scroll-snap-align:none!important}
+@media(prefers-reduced-motion:reduce){.site-home .og-work-track{scroll-behavior:auto!important}}
