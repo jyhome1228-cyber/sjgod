@@ -145,3 +145,45 @@
 @media(prefers-reduced-motion:reduce){
  .site-home .sh-brand-mane{animation:none!important;opacity:1!important}
 }
+
+
+/* Restore the original partner strip directly below the brand statement.
+   No generic card headings or statistics on the homepage. */
+.site-home .og-statement{
+ padding:105px 0 53px!important;
+ border-bottom:0!important;
+ background:#171719!important;
+}
+.site-home .og-statement .og-narrow{max-width:1050px}
+.site-home .og-statement h2{font-size:clamp(27px,2.7vw,37px)!important;line-height:1.42!important}
+.site-home .sh-partners-original{
+ background:#171719!important;
+ border-bottom:0!important;
+ padding:0 0 115px!important;
+ overflow:hidden;
+}
+.site-home .sh-partners-original>.container{
+ max-width:1050px!important;
+ width:calc(100% - 48px)!important;
+}
+.site-home .sh-partners-original .partner-grid.partner-marquee{
+ margin:0!important;padding:0!important;
+ mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+ -webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+}
+.site-home .sh-partners-original .media-tile.media-partners{
+ background:#272729!important;
+ border:0!important;
+ border-radius:12px!important;
+}
+.site-home .sh-partners-original .partner-marquee-track{animation-duration:78s}
+@media(max-width:800px){
+ .site-home .og-statement{padding:70px 0 34px!important}
+ .site-home .sh-partners-original{padding:0 0 75px!important}
+ .site-home .sh-partners-original>.container{width:calc(100% - 40px)!important}
+}
+@media(max-width:540px){
+ .site-home .og-statement{padding:55px 0 28px!important}
+ .site-home .sh-partners-original{padding-bottom:55px!important}
+ .site-home .og-statement h2{font-size:26px!important}
+}
