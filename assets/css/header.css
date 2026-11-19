@@ -95,3 +95,62 @@
   .sj-page-loader .sj-loader-ray,.sj-page-loader-dots i{animation:none!important;opacity:1!important;transform:none!important}
   .sj-page-loader{transition:none!important}
 }
+
+
+/* November 2026 sitewide header refinement: left brand / centered nav / right inquiry */
+@media(min-width:1181px){
+ .site-header{height:92px!important;min-height:92px!important}
+ .site-header .header-inner{
+   position:relative!important;
+   display:grid!important;
+   grid-template-columns:minmax(185px,1fr) auto minmax(185px,1fr)!important;
+   align-items:center!important;
+   gap:18px!important;
+   height:92px!important;
+   width:calc(100% - 80px)!important;
+   max-width:1440px!important;
+ }
+ .site-header .brand-lockup{grid-column:1;justify-self:start;width:190px!important;height:49px!important}
+ .site-header .desktop-nav{
+   position:static!important;
+   transform:none!important;
+   grid-column:2;
+   justify-self:center!important;
+   display:flex!important;
+   align-items:center!important;
+   gap:clamp(15px,1.45vw,24px)!important;
+   margin:0!important;
+   white-space:nowrap!important;
+ }
+ .site-header .desktop-nav>a:not(.nav-cta){
+   font-size:15px!important;
+   font-weight:570!important;
+   line-height:1.4!important;
+   letter-spacing:-.027em!important;
+ }
+ .site-header .header-cta{
+   grid-column:3;justify-self:end;display:inline-flex!important;
+   align-items:center;justify-content:center;
+   min-height:43px;padding:12px 22px!important;
+   border-radius:999px;background:#fff;color:#000!important;
+   font-size:14px!important;font-weight:670!important;
+   text-decoration:none!important;white-space:nowrap;
+ }
+ .site-header .menu-toggle{display:none!important}
+}
+@media(min-width:1181px) and (max-width:1370px){
+ .site-header .header-inner{grid-template-columns:minmax(160px,1fr) auto minmax(160px,1fr)!important}
+ .site-header .brand-lockup{width:170px!important}
+ .site-header .desktop-nav{gap:15px!important}
+ .site-header .desktop-nav>a:not(.nav-cta){font-size:14px!important}
+ .site-header .header-cta{padding:11px 18px!important}
+}
+@media(max-width:1180px){
+ .site-header,.site-header .header-inner{height:74px!important;min-height:74px!important}
+ .site-header .desktop-nav{display:none!important}
+ .site-header .header-cta{display:none!important}
+ .site-header .menu-toggle{display:block!important;margin-left:auto!important}
+}
+@media(max-width:800px){
+ .site-header,.site-header .header-inner{height:70px!important;min-height:70px!important}
+}
