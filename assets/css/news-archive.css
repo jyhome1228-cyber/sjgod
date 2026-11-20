@@ -102,3 +102,92 @@
  #news-archive .news-disclosure-content{padding:21px 10px 27px!important}
  #news-archive .news-disclosure-paragraph{font-size:14px!important}
 }
+
+
+/* Align heading, controls and accordion around one centered 1120px column. */
+main:not(.site-home) .news-archive-section .news-archive-container{
+  width:calc(100% - 80px)!important;
+  max-width:1120px!important;
+  margin-inline:auto!important;
+}
+main:not(.site-home) .news-archive-section .news-archive-heading{
+  max-width:760px;
+  margin:0 auto 37px;
+  text-align:center;
+}
+main:not(.site-home) .news-archive-section .news-archive-heading h2{
+  margin:0 0 16px!important;
+  font-size:clamp(27px,2.6vw,34px)!important;
+  text-align:center;
+}
+main:not(.site-home) .news-archive-section .news-archive-heading .renew-lead{
+  margin:0 auto!important;
+  max-width:670px!important;
+  text-align:center;
+  line-height:1.85!important;
+  color:#aaa!important;
+}
+main:not(.site-home) .news-archive-section .filterbar{
+  display:flex!important;
+  justify-content:center!important;
+  align-items:end!important;
+  flex-wrap:wrap!important;
+  gap:12px 15px!important;
+  width:100%!important;
+  margin:0 auto 36px!important;
+  padding:0!important;
+  border:0!important;
+}
+main:not(.site-home) .news-archive-section .filterbar label{
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+  font-size:13px;
+  text-align:left;
+  min-width:0;
+}
+main:not(.site-home) .news-archive-section .filterbar select{
+  min-width:160px;
+  min-height:48px;
+}
+main:not(.site-home) .news-archive-section .filterbar input[type="search"]{
+  width:250px;
+  max-width:100%;
+  min-height:48px;
+}
+main:not(.site-home) .news-archive-section .filterbar .filter-count{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  color:#aaa!important;
+  font-size:13px;
+  white-space:nowrap;
+}
+#news-archive.news-accordion-list{
+  width:100%!important;
+  max-width:1120px!important;
+  margin:0 auto!important;
+}
+main:not(.site-home) .news-archive-section .news-pagination{
+  max-width:1120px;
+  margin:30px auto 0;
+}
+main:not(.site-home) .news-archive-section .renew-note{
+  max-width:1120px;
+  margin:35px auto 0!important;
+  font-size:12px!important;
+  color:#858585!important;
+  line-height:1.8!important;
+}
+@media(max-width:750px){
+  main:not(.site-home) .news-archive-section .news-archive-container{width:calc(100% - 40px)!important}
+  main:not(.site-home) .news-archive-section .news-archive-heading{margin-bottom:30px}
+  main:not(.site-home) .news-archive-section .filterbar{justify-content:stretch!important;gap:12px!important}
+  main:not(.site-home) .news-archive-section .filterbar label{flex:1 1 calc(50% - 12px)}
+  main:not(.site-home) .news-archive-section .filterbar select,
+  main:not(.site-home) .news-archive-section .filterbar input[type="search"]{width:100%!important;min-width:0!important}
+  main:not(.site-home) .news-archive-section .filterbar .filter-count{min-height:0;flex-basis:100%;justify-content:flex-end}
+}
+@media(max-width:450px){
+  main:not(.site-home) .news-archive-section .filterbar label:last-of-type{flex-basis:100%}
+}
