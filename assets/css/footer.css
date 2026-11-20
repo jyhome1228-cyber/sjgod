@@ -56,3 +56,12 @@
   width:135px!important;height:102px!important;margin-bottom:18px!important;
  }
 }
+
+
+/* Stacked footer SVG is authored white. Preserve its original fill. */
+.site-footer .brand-lockup-image{
+ filter:none!important;
+ -webkit-filter:none!important;
+ opacity:1!important;
+ visibility:visible!important;
+}
