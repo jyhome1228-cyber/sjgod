@@ -154,3 +154,12 @@
 @media(max-width:800px){
  .site-header,.site-header .header-inner{height:70px!important;min-height:70px!important}
 }
+
+
+/* Current brand SVG paths are authored white. Never invert to black. */
+.site-header .brand-lockup-image{
+ filter:none!important;
+ -webkit-filter:none!important;
+ opacity:1!important;
+ visibility:visible!important;
+}
