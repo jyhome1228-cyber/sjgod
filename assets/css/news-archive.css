@@ -191,3 +191,79 @@ main:not(.site-home) .news-archive-section .renew-note{
 @media(max-width:450px){
   main:not(.site-home) .news-archive-section .filterbar label:last-of-type{flex-basis:100%}
 }
+
+
+/* News UI geometry repair: legacy flex:1 controls caused horizontal overflow. */
+html:has(.news-archive-section),body:has(.news-archive-section){max-width:100%;overflow-x:clip}
+main:not(.site-home) .news-archive-section{width:100%;min-width:0;overflow-x:clip}
+main:not(.site-home) .news-archive-section .news-archive-container{
+  box-sizing:border-box!important;display:block!important;
+  width:calc(100% - 64px)!important;max-width:1120px!important;
+  min-width:0!important;margin-inline:auto!important;padding:0!important;
+}
+main:not(.site-home) .news-archive-section .news-archive-heading{
+  width:100%;max-width:740px;box-sizing:border-box;
+  text-align:center;margin:0 auto 36px!important;
+}
+main:not(.site-home) .news-archive-section .news-archive-heading .renew-lead{
+  display:block;max-width:700px!important;width:100%!important;
+  font-size:15px!important;line-height:1.85!important;
+  white-space:normal!important;overflow-wrap:break-word;
+}
+main:not(.site-home) .news-archive-section .filterbar{
+  box-sizing:border-box!important;
+  display:grid!important;grid-template-columns:160px 160px minmax(220px,300px) auto!important;
+  justify-content:center!important;align-items:end!important;
+  width:100%!important;max-width:100%!important;min-width:0!important;
+  gap:16px!important;margin:0 auto 36px!important;
+}
+main:not(.site-home) .news-archive-section .filterbar label{
+  display:flex!important;flex:none!important;min-width:0!important;
+  max-width:none!important;width:100%!important;box-sizing:border-box!important;
+  flex-direction:column!important;gap:8px!important;
+  font-size:13px!important;line-height:1.4!important;
+  font-weight:590!important;color:#eee!important;
+}
+main:not(.site-home) .news-archive-section .filterbar select,
+main:not(.site-home) .news-archive-section .filterbar input,
+main:not(.site-home) .news-archive-section .filterbar input[type=search]{
+  box-sizing:border-box!important;width:100%!important;min-width:0!important;
+  max-width:100%!important;height:46px!important;min-height:46px!important;
+  padding:10px 13px!important;font-size:14px!important;font-weight:450!important;
+  line-height:1.4!important;border:1px solid #555!important;border-radius:4px!important;
+  background:#080808!important;color:#fff!important;
+}
+main:not(.site-home) .news-archive-section .filterbar .filter-count{
+  flex:none!important;align-self:end!important;justify-self:start!important;
+  min-width:0!important;min-height:46px!important;font-size:13px!important;
+  display:flex;align-items:center;white-space:nowrap;
+}
+#news-archive.news-accordion-list{box-sizing:border-box!important;display:block!important;min-width:0!important;width:100%!important;max-width:100%!important}
+#news-archive .news-disclosure{width:100%;min-width:0;box-sizing:border-box}
+#news-archive .news-disclosure-title{
+  box-sizing:border-box!important;min-width:0!important;width:100%!important;
+  font-size:15px!important;font-weight:460!important;line-height:1.7!important;
+  letter-spacing:-.025em!important;
+}
+#news-archive .news-disclosure-headline{
+  min-width:0!important;max-width:100%!important;font-size:15px!important;
+  font-weight:450!important;white-space:normal!important;overflow-wrap:anywhere;
+  line-height:1.7!important;
+}
+#news-archive .news-disclosure-date{font-size:14px!important;font-weight:450!important}
+#news-archive .news-disclosure-content{min-width:0;max-width:100%;box-sizing:border-box}
+@media(max-width:850px){
+ main:not(.site-home) .news-archive-section .filterbar{
+   grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;
+   justify-content:stretch!important;
+ }
+ main:not(.site-home) .news-archive-section .filterbar label:nth-of-type(3){grid-column:1/-1}
+ main:not(.site-home) .news-archive-section .filterbar .filter-count{grid-column:1/-1;min-height:0!important;justify-self:end!important}
+}
+@media(max-width:600px){
+ main:not(.site-home) .news-archive-section .news-archive-container{width:calc(100% - 36px)!important}
+ main:not(.site-home) .news-archive-section .filterbar{gap:12px!important}
+ #news-archive .news-disclosure-title{font-size:14px!important;padding:17px 10px!important}
+ #news-archive .news-disclosure-headline{font-size:14px!important}
+ #news-archive .news-disclosure-date{font-size:12px!important}
+}
