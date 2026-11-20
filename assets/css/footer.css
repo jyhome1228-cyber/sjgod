@@ -39,3 +39,20 @@
  .site-footer-refined .footer-company-details p{gap:5px 14px}
  .site-footer-refined .footer-bottom small{white-space:normal}
 }
+
+
+/* Brand identity update: vertically stacked original-style mark in the footer. */
+.site-footer-refined .footer-identity .brand-lockup{
+ width:150px!important;height:114px!important;max-width:100%;
+ display:inline-flex!important;align-items:center!important;justify-content:flex-start!important;
+ margin:0 0 22px!important;
+}
+.site-footer-refined .footer-identity .brand-lockup-image{
+ display:block!important;width:100%!important;height:100%!important;
+ object-fit:contain!important;object-position:left center!important;
+}
+@media(max-width:580px){
+ .site-footer-refined .footer-identity .brand-lockup{
+  width:135px!important;height:102px!important;margin-bottom:18px!important;
+ }
+}
