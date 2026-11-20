@@ -36,18 +36,27 @@
     item.append(summary);
     const content=makeText('div','news-disclosure-content','');
     const media=makeText('div','news-disclosure-media','');
-    if(article.image){
+    const photos=Array.isArray(article.images)&&article.images.length?article.images:(article.image?[article.image]:[]);
+    photos.forEach((src,i)=>{
       const image=document.createElement('img');
-      image.src=article.image;image.alt=article.title+' 관련 사진';
+      image.src=src;image.alt=article.title+' 현장 및 관련 자료 '+(i+1);
       image.loading='lazy';image.decoding='async';
-      image.addEventListener('error',()=>media.remove(),{once:true});
-      media.append(image);content.append(media);
-    }
+      image.addEventListener('error',()=>image.remove(),{once:true});
+      media.append(image);
+    });
+    if(photos.length)content.append(media);
     const body=makeText('div','news-disclosure-body','');
     const meta=makeText('p','news-disclosure-meta',article.publisher+' · '+article.category);
     body.append(meta);
-    if(article.summary)body.append(makeText('p','news-disclosure-summary',article.summary));
-    else body.append(makeText('p','news-disclosure-summary','등록된 뉴스 제목과 발행 정보입니다. 상세 내용은 원문 자료 확인 후 보강합니다.'));
+    if(Array.isArray(article.paragraphs) && article.paragraphs.length){
+      const paragraphs=makeText('div','news-disclosure-paragraphs','');
+      article.paragraphs.forEach(part=>paragraphs.append(makeText('p','news-disclosure-paragraph',part)));
+      body.append(paragraphs);
+    } else if(article.summary){
+      body.append(makeText('p','news-disclosure-summary',article.summary));
+    } else {
+      body.append(makeText('p','news-disclosure-summary','기사 제목과 발행 정보만 확인되었습니다. 상세 원문 자료를 확보하면 추가하겠습니다.'));
+    }
     if(article.url){
       const link=makeText('a','news-disclosure-source','영상·기사 원문 보기');
       link.href=article.url;link.target='_blank';link.rel='noopener noreferrer';
