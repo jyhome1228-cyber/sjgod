@@ -114,7 +114,7 @@
  }
  const news=document.getElementById('og-news-list');
  if(news){
-  (window.SJGOD_NEWS||[]).slice(0,12).forEach((article,i)=>{
+  (window.SJGOD_NEWS||[]).slice(0,3).forEach((article,i)=>{
    const el=document.createElement('details');el.className='og-news-item';
    const sum=document.createElement('summary');
    const date=document.createElement('time');date.dateTime=article.date;date.textContent='['+article.date.replaceAll('-','. ')+'.]';
