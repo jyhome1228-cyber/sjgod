@@ -122,10 +122,21 @@
    const arrow=document.createElement('span');arrow.className='og-news-chevron';arrow.setAttribute('aria-hidden','true');
    sum.append(date,t,arrow);
    const body=document.createElement('div');body.className='og-news-body';
+   if(article.image){
+     const img=document.createElement('img');
+     img.src=article.image;img.alt=article.title+' 관련 사진';img.loading='lazy';img.decoding='async';
+     img.className='og-news-preview';
+     img.addEventListener('error',()=>img.remove(),{once:true});
+     body.append(img);
+   }
+   const details=document.createElement('div');details.className='og-news-summary';
    const pub=document.createElement('p');pub.textContent=article.publisher+' · '+article.category;
-   const link=document.createElement('a');link.href=article.url||'news.html';link.textContent=article.url?'기사 원문 확인':'전체 소식에서 보기';
+   details.append(pub);
+   if(article.summary){const p=document.createElement('p');p.className='og-news-excerpt';p.textContent=article.summary;details.append(p)}
+   const link=document.createElement('a');link.href=article.url||'news.html';
+   link.textContent=article.url?'영상·기사 원문 보기':'뉴스 전체 보기';
    if(article.url){link.target='_blank';link.rel='noopener noreferrer'}
-   body.append(pub,link);el.append(sum,body);news.append(el);
+   details.append(link);body.append(details);el.append(sum,body);news.append(el);
   });
  }
 })();
